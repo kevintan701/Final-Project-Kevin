@@ -6,6 +6,7 @@ function toggleTheme() {
     const isDarkTheme = document.body.classList.contains('dark-theme');
 
     // Set the source for your images based on the theme
+    logoWordMarkHome.src = isDarkTheme ? 'medias/Logo_Word_Mark_white.png' : 'medias/Logo_Word_Mark.png';
     logoMarkHome.src = isDarkTheme ? 'medias/Lab_Logo_white.svg' : 'medias/Lab_Logo.svg';
 
 }
