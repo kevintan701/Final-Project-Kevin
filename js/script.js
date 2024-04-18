@@ -3,6 +3,11 @@
 // Function to toggle the theme
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
+    const isDarkTheme = document.body.classList.contains('dark-theme');
+
+    // Set the source for your images based on the theme
+    logoMarkHome.src = isDarkTheme ? 'medias/Lab_Logo_white.svg' : 'medias/Lab_Logo.svg';
+
 }
 // Select the logo elements
 const logoWordMarkHome = document.querySelector("#logo-word-mark-home");
