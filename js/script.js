@@ -1,5 +1,22 @@
 // JavaScript for Kevin's Final Project - THE.LAB.701 website
 
+// Function to toggle the theme
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+}
+// Select the logo elements
+const logoWordMarkHome = document.querySelector("#logo-word-mark-home");
+const logoMarkHome = document.querySelector("#logo-mark-home");
+
+// Event listener for toggling theme on logo click
+if (logoWordMarkHome) {
+    logoWordMarkHome.addEventListener("click", toggleTheme);
+}
+
+if (logoMarkHome) {
+    logoMarkHome.addEventListener("click", toggleTheme);
+}
+
 const header = document.querySelector("header");
 const hamburgerBtn = document.querySelector("#hamburger-btn");
 const closeMenuBtn = document.querySelector("#close-menu-btn");
@@ -11,12 +28,7 @@ const gotoAboutArrowRight = document.querySelector("#right-arrow-about");
 const gotoMenuArrowLeft = document.querySelector("#left-arrow-menu");
 const gotoMemoryArrowRight = document.querySelector("#right-arrow-memories");
 
-// Toggle mobile menu on hamburger button click
 
-// if (hamburgerBtn){
-//     hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
-//     document.querySelector('#maincontent').classList.toggle('content-blur');
-// }
 // Toggle mobile menu and blur content on hamburger button click
 hamburgerBtn.addEventListener("click", () => {
     header.classList.toggle("show-mobile-menu");
