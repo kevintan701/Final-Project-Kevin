@@ -23,8 +23,6 @@
     word-wrap: normal;
     direction: ltr;
     -webkit-font-smoothing: antialiased;
-
-
 }
 
 .material-symbols-outlined {
@@ -40,52 +38,37 @@
 @keyframes logowordmarkTransformHome {
     from {
         opacity: 0;
-        transform: translate(0, 10px);
-        align-self: start;
-        margin-left: 20px;
+        transform: translate(20px, 10px);
     }
 
     to {
         opacity: 1;
-        transform: translate(0, 30px);
-        align-self: start;
-        margin-left: 20px;
-
+        transform: translate(20px, 30px);
     }
 }
 
 #logo-word-mark-home {
     animation: logowordmarkTransformHome 4s ease-out forwards;
-
     animation-delay: 3s;
     width: 100px;
     position: fixed;
     align-self: start;
-    margin-left: 30px;
+    transform: translate(20px, 10px);
 }
 
 @keyframes logomarkTransformHome {
     from {
-        width: 180px;
-        opacity: 1;
-        transform: translate(100%, 150px);
-        align-self: start;
+        transform: translate(100%, 150px) scale(1);
     }
 
     75% {
-        width: 55px;
-        opacity: 1;
-        transform: translate(0px, 60px);
-        align-self: start;
-        margin-left: 40px;
+        opacity: 0.8;
+        transform: translate(-20px, 60px) scale(0.3) rotate(360deg);
     }
 
     to {
-        width: 55px;
         opacity: 1;
-        transform: translate(0, 0px);
-        align-self: start;
-        margin-left: 40px;
+        transform: translate(-20px, 0px) scale(0.3);
     }
 }
 
@@ -96,6 +79,7 @@
     transform: translate(100%, 150px);
     position: fixed;
     align-self: start;
+    opacity: 0;
 
 }
 
@@ -103,27 +87,20 @@
 @keyframes logowordmarkTransforMenu {
     from {
         opacity: 0;
-        transform: translate(0, 0);
-        align-self: start;
-        margin-left: 20px;
-
+        transform: translate(-40px, 0);
     }
 
     to {
         opacity: 1;
-        transform: translate(0, 0);
-        align-self: start;
-        margin-left: 20px;
-
+        transform: translate(20px, 0);
     }
 }
 
 #logo-word-mark-menu {
-    animation: logowordmarkTransforMenu 4s ease-out forwards;
+    animation: logowordmarkTransforMenu 3s ease-out forwards;
     width: 100px;
     position: fixed;
     align-self: start;
-    margin-left: 20px;
 }
 
 #logo-mark-menu {
@@ -135,27 +112,20 @@
 @keyframes logowordmarkTransforMemory {
     from {
         opacity: 0;
-        transform: translate(0, 0);
-        align-self: start;
-        margin-left: 20px;
-
+        transform: translate(-40px, 0);
     }
 
     to {
         opacity: 1;
-        transform: translate(0, 0);
-        align-self: start;
-        margin-left: 20px;
-
+        transform: translate(20px, 0);
     }
 }
 
 #logo-word-mark-memory {
-    animation: logowordmarkTransforMemory 4s ease-out forwards;
+    animation: logowordmarkTransforMemory 3s ease-out forwards;
     width: 100px;
     position: fixed;
     align-self: start;
-    margin-left: 20px;
 }
 
 #logo-mark-memory {
@@ -167,25 +137,20 @@
 @keyframes logowordmarkTransforAbout {
     from {
         opacity: 0;
-        transform: translate(0, 0);
-        align-self: start;
-        margin-left: 20px;
+        transform: translate(-40px, 0);
     }
 
     to {
         opacity: 1;
-        transform: translate(0, 0);
-        align-self: start;
-        margin-left: 20px;
+        transform: translate(20px, 0);
     }
 }
 
 #logo-word-mark-about {
-    animation: logowordmarkTransforAbout 4s ease-out forwards;
+    animation: logowordmarkTransforAbout 3s ease-out forwards;
     width: 100px;
     position: fixed;
     align-self: start;
-    margin-left: 20px;
 }
 
 @keyframes logomarkTransformAbout {
@@ -251,13 +216,13 @@ header {
     top: 20px;
     position: top;
     z-index: 120;
-
 }
 
-/* Navigation styles */
-header nav {
-    /* Flexbox or grid to align items */
-    /* Transition effects */
+/* Footer styles */
+footer {
+    padding-top: 100px;
+    margin-top: 30px;
+    margin-left: 20px;
 }
 
 
@@ -416,13 +381,11 @@ main {
     from {
         opacity: 1;
         transform: translate(0, 200px);
-        align-self: center;
     }
 
     to {
         opacity: 0;
-        transform: translate(0, 500px);
-        align-self: center;
+        transform: translate(600px, -400px) rotate(360deg) scale(0.5);
     }
 }
 
@@ -662,7 +625,7 @@ main {
 #memory-6:hover,
 #memory-6:focus {
     transform: scale(1.4);
-    transition: 0.5s;
+    transition: 0.6s;
     box-shadow: 0 0 10px black;
 }
 
@@ -718,39 +681,49 @@ main {
         margin-top: 50px;
     }
 
-    h1{
+    h1 {
         font-size: 3rem;
     }
 
     /* Logo Animation for Home Page */
-    @keyframes logomarkTransformHome {
+    @keyframes logowordmarkTransformHome {
         from {
-            width: 200px;
-            opacity: 1;
-            transform: translate(140%, 150px);
-        }
-
-        75% {
-            width: 55px;
-            opacity: 1;
-            transform: translate(0px, 60px);
-            align-self: start;
-            margin-left: 40px;
+            opacity: 0;
+            transform: translate(20px, 10px);
         }
 
         to {
-            width: 55px;
             opacity: 1;
-            transform: translate(0, 0px);
-            align-self: start;
-            margin-left: 40px;
+            transform: translate(20px, 30px);
+        }
+    }
+
+    #logo-word-mark-home {
+        width: 110px;
+        transform: translate(20px, 10px);
+    }
+
+    @keyframes logomarkTransformHome {
+        from {
+            opacity: 0;
+            transform: translate(140%, 150px) scale(1);
+        }
+
+        75% {
+            opacity: 0.8;
+            transform: translate(-30px, 60px) scale(0.3) rotate(360deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-30px, -5px) scale(0.3);
         }
     }
 
     #logo-mark-home {
-
         width: 200px;
         transform: translate(140%, 150px);
+        opacity: 0;
     }
 
     @keyframes subnaviTransform {
@@ -767,7 +740,42 @@ main {
         }
     }
 
+    /* Logo Animation for Menu Page */
 
+    #logo-word-mark-menu {
+        width: 110px;
+    }
+
+
+    /* Logo Animation for Memory Page */
+    #logo-word-mark-memory {
+        width: 110px;
+    }
+
+    /* Logo Animation for About Page */
+    #logo-word-mark-about {
+        width: 110px;
+    }
+
+    @keyframes logomarkTransformAbout {
+        from {
+            transform: translate(0, 300px) scale(0.2);
+            opacity: 0.2;
+        }
+
+        to {
+            transform: translate(0, 90px) scale(1) rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+    #logo-mark-about {
+        animation: logomarkTransformAbout 3s ease-in-out forwards;
+        width: 200px;
+        transform: translate(0, 300px) scale(0.2);
+        padding-top: 140px;
+        padding-bottom: 30px;
+    }
 
     /* sub navigation for home page */
 
@@ -806,57 +814,12 @@ main {
 
     }
 
-    /* Logo Animation for About Page */
-    @keyframes logowordmarkTransforAbout {
-        from {
-            opacity: 0;
-            transform: translate(0, 0);
-            align-self: start;
-            margin-left: 20px;
-        }
 
-        to {
-            opacity: 1;
-            transform: translate(0, 0);
-            align-self: start;
-            margin-left: 20px;
-        }
-    }
-
-    #logo-word-mark-about {
-        animation: logowordmarkTransforAbout 4s ease-out forwards;
-        width: 100px;
-        position: fixed;
-        align-self: start;
-        margin-left: 20px;
-    }
-
-    @keyframes logomarkTransformAbout {
-        from {
-            transform: translate(0, 300px) scale(0.2);
-            opacity: 0.2;
-        }
-
-        to {
-            transform: translate(0, 90px) scale(1) rotate(360deg);
-            opacity: 1;
-        }
-    }
-
-    #logo-mark-about {
-        animation: logomarkTransformAbout 3s ease-in-out forwards;
-        width: 160px;
-        transform: translate(0, 300px) scale(0.2);
-        position: fixed;
-        align-self: center;
-        padding-top: 80px;
-
-    }
 
     #about-content {
         animation: aboutcontent 3s ease-in-out forwards;
         padding: 40px;
-        margin-top: 130px;
+        margin-top: 150px;
         margin-left: 20px;
         font-size: 1.5rem;
     }
@@ -955,6 +918,8 @@ main {
         font-size: 3rem;
     }
 
+
+
     #menu-title {
         font-size: 3.2rem;
         padding-top: 50px;
@@ -967,39 +932,53 @@ main {
         margin-top: 50px;
     }
 
-    h1{
+    h1 {
         font-size: 3rem;
     }
 
     /* Logo Animation for Home Page */
-    @keyframes logomarkTransformHome {
-        from {
-            width: 200px;
-            opacity: 1;
-            transform: translate(240%, 150px);
-        }
 
-        75% {
-            width: 55px;
-            opacity: 1;
-            transform: translate(0px, 60px);
-            align-self: start;
-            margin-left: 40px;
+    @keyframes logowordmarkTransformHome {
+        from {
+            opacity: 0;
+            transform: translate(20px, 10px);
         }
 
         to {
-            width: 55px;
             opacity: 1;
-            transform: translate(0, 0px);
-            align-self: start;
-            margin-left: 40px;
+            transform: translate(20px, 30px);
         }
     }
 
-    #logo-mark-home {
+    #logo-word-mark-home {
+        width: 130px;
+        transform: translate(20px, 10px);
+    }
 
-        width: 200px;
-        transform: translate(240%, 150px);
+    @keyframes logomarkTransformHome {
+        from {
+            opacity: 0;
+            transform: translate(300%, 150px) scale(1);
+        }
+
+        75% {
+            opacity: 0.8;
+            transform: translate(-30px, 60px) scale(0.3) rotate(360deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-30px, -5px) scale(0.3);
+        }
+    }
+
+
+
+    #logo-mark-home {
+        width: 220px;
+        transform: translate(300%, 150px);
+        opacity: 0;
+
     }
 
     @keyframes subnaviTransform {
@@ -1016,6 +995,44 @@ main {
         }
     }
 
+    /* Logo Animation for Menu Page */
+
+    #logo-word-mark-menu {
+        width: 130px;
+    }
+
+
+    /* Logo Animation for Memory Page */
+    #logo-word-mark-memory {
+        width: 130px;
+    }
+
+    /* Logo Animation for About Page */
+    #logo-word-mark-about {
+        width: 130px;
+    }
+
+    @keyframes logomarkTransformAbout {
+        from {
+            transform: translate(0, 300px) scale(0.2);
+            opacity: 0.2;
+        }
+
+        to {
+            transform: translate(0, 90px) scale(1) rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+    #logo-mark-about {
+        animation: logomarkTransformAbout 3s ease-in-out forwards;
+        width: 220px;
+        transform: translate(0, 300px) scale(0.2);
+        position: fixed;
+        align-self: center;
+        padding-top: 180px;
+        padding-bottom: 60px;
+    }
 
 
     /* sub navigation for home page */
@@ -1044,8 +1061,8 @@ main {
     }
 
     #home-about-701 {
-        padding-top: 40px;
-        flex-basis: 180px;
+        padding-top: 60px;
+        flex-basis: 200px;
 
 
     }
@@ -1057,57 +1074,10 @@ main {
 
     }
 
-    /* Logo Animation for About Page */
-    @keyframes logowordmarkTransforAbout {
-        from {
-            opacity: 0;
-            transform: translate(0, 0);
-            align-self: start;
-            margin-left: 20px;
-        }
-
-        to {
-            opacity: 1;
-            transform: translate(0, 0);
-            align-self: start;
-            margin-left: 20px;
-        }
-    }
-
-    #logo-word-mark-about {
-        animation: logowordmarkTransforAbout 4s ease-out forwards;
-        width: 100px;
-        position: fixed;
-        align-self: start;
-        margin-left: 20px;
-    }
-
-    @keyframes logomarkTransformAbout {
-        from {
-            transform: translate(0, 300px) scale(0.2);
-            opacity: 0.2;
-        }
-
-        to {
-            transform: translate(0, 90px) scale(1) rotate(360deg);
-            opacity: 1;
-        }
-    }
-
-    #logo-mark-about {
-        animation: logomarkTransformAbout 3s ease-in-out forwards;
-        width: 160px;
-        transform: translate(0, 300px) scale(0.2);
-        position: fixed;
-        align-self: center;
-        padding-top: 80px;
-
-    }
-
     #about-content {
         animation: aboutcontent 3s ease-in-out forwards;
         padding: 50px;
-        margin-top: 130px;
+        margin-top: 180px;
         margin-left: 20px;
         font-size: 2rem;
     }
@@ -1126,23 +1096,23 @@ main {
     #left-tag {
         padding-right: 120px;
     }
-    
+
     #right-tag {
         padding-left: 120px;
     }
 
     .memorygalary {
         display: grid;
-        grid-template-columns: repeat(3, 200px);
-        grid-template-rows: repeat(2, 200px);
+        grid-template-columns: repeat(3, 220px);
+        grid-template-rows: repeat(2, 220px);
         gap: 60px;
         padding-top: 30px;
         margin-top: 50px;
     }
 
     .memorygalary img {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
     }
 
     #memory-1:hover,
