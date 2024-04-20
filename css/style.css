@@ -1203,17 +1203,38 @@ main {
 .dark-theme #navigation-arrow-about,
 .dark-theme #navigation-arrow-menu,
 .dark-theme #navigation-arrow-explore,
-.dark-theme #hamburger-btn
+.dark-theme #hamburger-btn,
+.dark-theme #left-tag,
+.dark-theme #right-tag,
+.dark-theme #left-arrow-menu,
+.dark-theme #right-arrow-about,
+.dark-theme #left-arrow-memories,
+.dark-theme #right-arrow-memories
 {
     color: white;
     /* Adjust text color for visibility */
 }
 
 
-.dark-theme #logo-mark-menu{
-    filter: invert(100%);
+.dark-theme .memorygalary img {
+    border: 2px solid white;
 }
 
+.dark-theme #memory-1:hover,
+.dark-theme #memory-1:focus,
+.dark-theme #memory-2:hover,
+.dark-theme #memory-2:focus,
+.dark-theme #memory-3:hover,
+.dark-theme #memory-3:focus,
+.dark-theme #memory-4:hover,
+.dark-theme #memory-4:focus,
+.dark-theme #memory-5:hover,
+.dark-theme #memory-5:focus,
+.dark-theme #memory-6:hover,
+.dark-theme #memory-6:focus {
+
+    box-shadow:  0 0 50px white;
+}
 
 
 body,
@@ -1223,3 +1244,4 @@ header,
 footer {
     transition: background-color 0.3s, color 0.3s;
 }
+
