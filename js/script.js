@@ -31,6 +31,7 @@ function toggleTheme() {
 
 document.addEventListener('DOMContentLoaded', applyTheme);
 
+
 // Select the logo elements
 const logoWordMarkHome = document.querySelector("#logo-word-mark-home");
 const logoMarkHome = document.querySelector("#logo-mark-home");
@@ -39,7 +40,7 @@ const logoWordMarkMemory = document.querySelector("#logo-word-mark-memory");
 const logoWordMarkAbout = document.querySelector("#logo-word-mark-about");
 const logoMarkAbout = document.querySelector("#logo-mark-about");
 
-// Event listener for toggling theme on logo click
+// Event listener for toggling theme on logo click 
 if (logoWordMarkHome) {
     logoWordMarkHome.addEventListener("click", toggleTheme);
 }
@@ -64,6 +65,26 @@ if (logoMarkHome) {
 if (logoMarkAbout) {
     logoMarkAbout.addEventListener("click", toggleTheme);
 }
+
+// Select all logo elements for hover and focus effects
+const logoItems = document.querySelectorAll("#logo-word-mark-home, #logo-word-mark-menu, #logo-word-mark-memory, #logo-word-mark-about, #logo-mark-home, #logo-mark-about");
+logoItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+        item.classList.add("item-hover");
+    });
+    item.addEventListener("mouseleave", () => {
+        item.classList.remove("item-hover");
+    });
+    item.addEventListener("focus", () => {
+        item.classList.add("item-hover");
+    });
+    item.addEventListener("blur", () => {
+        item.classList.remove("item-hover");
+    });
+});
+
+
+
 
 const header = document.querySelector("header");
 const hamburgerBtn = document.querySelector("#hamburger-btn");

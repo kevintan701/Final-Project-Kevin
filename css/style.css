@@ -644,6 +644,37 @@ main {
     font-size: 1.2rem;
 }
 
+@keyframes memorytitleTransform {
+    from {
+        opacity: 0;
+        transform: translate(0, -100px) scale(0.5) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+    }
+}
+
+#memory-title {
+    font-size: 1.8rem;
+    animation: memorytitleTransform 3s ease-out forwards;
+    padding-top: 40px;
+}
+
+
+@keyframes memoryimgTransform {
+    from {
+        opacity: 0;
+        transform: translate(0, 600px) scale(0.2) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+    }
+}
+
 .memorygalary {
     display: grid;
     grid-template-columns: repeat(2, 180px);
@@ -653,6 +684,7 @@ main {
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    animation: memoryimgTransform 3s ease-out forwards;
 }
 
 .memorygalary img {
@@ -661,6 +693,28 @@ main {
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid black;
+}
+
+@keyframes rotateY{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+
+} 
+    
+
+/* Self rotation effect */
+#memory-1,
+#memory-2,
+#memory-3,
+#memory-4,
+#memory-5,
+#memory-6{
+    animation: rotateY 4s infinite ease-in-out;
+    will-change: transform;
 }
 
 #memory-1:hover,
@@ -675,9 +729,11 @@ main {
 #memory-5:focus,
 #memory-6:hover,
 #memory-6:focus {
+    animation: none;
+    animation-delay: 1s;
     transform: scale(1.4);
-    transition: 0.6s;
-    box-shadow: 0 0 10px black;
+    transition: 1s 1s ease-in-out, box-shadow 1s ease-in-out;
+    box-shadow: 0 0 30px black;
 }
 
 
@@ -893,7 +949,11 @@ main {
     #right-tag {
         padding-left: 80px;
     }
-
+    #memory-title {
+        font-size: 2.1rem;
+        animation: memorytitleTransform 3s ease-out forwards;
+        padding-top: 40px;
+    }
     .memorygalary {
         display: grid;
         grid-template-columns: repeat(2, 200px);
@@ -921,10 +981,8 @@ main {
     #memory-6:hover,
     #memory-6:focus {
         transform: scale(1.5);
-        box-shadow: 0 0 30px black;
+        box-shadow: 0 0 60px black;
     }
-
-
 }
 
 @media only screen and (min-width: 1024px) {
@@ -986,6 +1044,8 @@ main {
     h1 {
         font-size: 3rem;
     }
+
+
 
     /* Logo Animation for Home Page */
 
@@ -1152,6 +1212,11 @@ main {
         padding-left: 120px;
     }
 
+
+    #memory-title {
+        font-size: 3.4rem;
+        padding-top: 50px;
+    }
     .memorygalary {
         display: grid;
         grid-template-columns: repeat(3, 220px);
@@ -1179,7 +1244,9 @@ main {
     #memory-6:hover,
     #memory-6:focus {
         transform: scale(1.6);
-        box-shadow: 0 0 30px black;
+        box-shadow: 0 0 80px black;
+
+        
     }
 }
 
@@ -1269,3 +1336,10 @@ footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
+
+
+/* Hover Effelt to Logo Item */
+.item-hover {
+    transform: scale(1.8);
+    transition: 0.6s;
+}
