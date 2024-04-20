@@ -1,20 +1,6 @@
 // JavaScript for Kevin's Final Project - THE.LAB.701 website
 
 // Function to toggle the theme
-// function toggleTheme() {
-//     document.body.classList.toggle('dark-theme');
-//     const isDarkTheme = document.body.classList.contains('dark-theme');
-
-//     // Set the source for your images based on the theme
-//     logoWordMarkHome.src = isDarkTheme ? 'medias/Logo_Word_Mark_white.png' : 'medias/Logo_Word_Mark.png';
-//     logoWordMarkMenu.src = isDarkTheme ? 'medias/Logo_Word_Mark_white.png' : 'medias/Logo_Word_Mark.png';
-//     logoWordMarkMemory.src = isDarkTheme ? 'medias/Logo_Word_Mark_white.png' : 'medias/Logo_Word_Mark.png';
-//     logoWordMarkAbout.src = isDarkTheme ? 'medias/Logo_Word_Mark_white.png' : 'medias/Logo_Word_Mark.png';
-//     logoMarkHome.src = isDarkTheme ? 'medias/Lab_Logo_white.svg' : 'medias/Lab_Logo.svg';
-//     logoMarkAbout.src = isDarkTheme ? 'medias/Lab_Logo_white.svg' : 'medias/Lab_Logo.svg';
-// }
-
-// Function to toggle the theme
 function applyTheme() {
     const isDarkTheme = localStorage.getItem('isDarkTheme') === 'true';
 

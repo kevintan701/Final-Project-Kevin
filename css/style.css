@@ -212,7 +212,9 @@ header {
     transition: top 0.8s ease-in-out;
 }
 
-.skip-link:focus {
+.skip-link:focus,
+.skip-link:active,
+.skip-link:hover {
     top: 20px;
     position: top;
     z-index: 120;
@@ -255,7 +257,9 @@ footer {
 
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
     color: #000000;
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
@@ -280,6 +284,19 @@ footer {
     transform: translate(200px, 0);
     padding: 20px 0 20px 0;
     margin-right: 10%;
+}
+
+#hamburger-btn:hover,
+#hamburger-btn:focus
+ {
+    transform: translate(200px, 0) scale(1.4);
+    transition: 0.5s;
+}
+
+#close-menu-btn:hover,
+#close-menu-btn:focus {
+    transform: scale(1.4);
+    transition: 0.5s;
 }
 
 header.show-mobile-menu::before {
@@ -464,7 +481,8 @@ main {
     /* transform: translate(90%, 200px); */
 }
 
-#navigation-arrow-menu:hover {
+#navigation-arrow-menu:hover,
+#navigation-arrow-menu:focus {
     transform: scale(1.8) rotate(180deg);
     transition: 0.6s;
 }
@@ -477,7 +495,8 @@ main {
     /* transform:  translate(90%, -270px); */
 }
 
-#navigation-arrow-explore:hover {
+#navigation-arrow-explore:hover,
+#navigation-arrow-explore:focus {
     transform: scale(1.8);
     transition: 0.6s;
 }
@@ -492,7 +511,8 @@ main {
     /* transform: translate(30%, 0); */
 }
 
-#navigation-arrow-about:hover {
+#navigation-arrow-about:hover,
+#navigation-arrow-about:focus {
     transform: rotate(90deg) scale(1.8);
     transition: 0.6s;
 }
@@ -549,7 +569,8 @@ main {
     /* transform: translate(90%, 200px); */
 }
 
-#left-arrow-memories:hover {
+#left-arrow-memories:hover,
+#left-arrow-memories:focus {
     transform: scale(1.8) rotate(180deg);
     transition: 0.6s;
 }
@@ -564,7 +585,8 @@ main {
     /* transform:  translate(90%, -270px); */
 }
 
-#right-arrow-about:hover {
+#right-arrow-about:hover,
+#right-arrow-about:focus {
     transform: scale(1.8);
     transition: 0.6s;
 }
@@ -579,7 +601,8 @@ main {
     /* transform: translate(90%, 200px); */
 }
 
-#left-arrow-menu:hover {
+#left-arrow-menu:hover,
+#left-arrow-menu:focus {
     transform: scale(1.8) rotate(180deg);
     transition: 0.6s;
 }
@@ -592,7 +615,8 @@ main {
     text-align: right;
     grid-area: 1/ 4/ 2/ 5;
 }
-#right-arrow-memories:hover {
+#right-arrow-memories:hover,
+#right-arrow-memories:focus {
     transform: scale(1.8);
     transition: 0.6s;
 }
@@ -1194,7 +1218,7 @@ main {
 
     background-color: white;
     color: black;
-    
+
 }
 
 .dark-theme .content,
