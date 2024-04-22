@@ -290,7 +290,7 @@ footer {
 #hamburger-btn:hover,
 #hamburger-btn:focus
  {
-    transform:  scale(1.4);
+    transform: translate(180px, 0) scale(1.4);
     transition: 0.5s;
 }
 
@@ -1199,7 +1199,7 @@ main {
         margin-top: 180px;
         margin-left: 20px;
     }
-    
+
     #about-content h1 {
         font-size: 2.2rem;
     }
