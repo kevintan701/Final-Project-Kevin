@@ -643,7 +643,11 @@ main {
     padding: 20px;
     margin-top: 120px;
     margin-left: 20px;
-    font-size: 1rem;
+    font-size: 1.4rem;
+}
+
+#about-content h1 {
+    font-size: 1.4rem;
 }
 
 @keyframes memorytitleTransform {
@@ -793,6 +797,7 @@ main {
         font-size: 3rem;
     }
 
+
     /* Logo Animation for Home Page */
     @keyframes logowordmarkTransformHome {
         from {
@@ -927,7 +932,10 @@ main {
         padding: 40px;
         margin-top: 150px;
         margin-left: 20px;
-        font-size: 1.4rem;
+    }
+
+    #about-content h1 {
+        font-size: 1.8rem;
     }
 
     /* sub navigation for other pages */
@@ -1043,6 +1051,7 @@ main {
     h1 {
         font-size: 3rem;
     }
+
 
 
 
@@ -1189,7 +1198,10 @@ main {
         padding: 50px;
         margin-top: 180px;
         margin-left: 20px;
-        font-size: 1.8rem;
+    }
+    
+    #about-content h1 {
+        font-size: 2.2rem;
     }
 
     /* sub navigation for other pages */
