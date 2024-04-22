@@ -40,7 +40,7 @@ const logoWordMarkMemory = document.querySelector("#logo-word-mark-memory");
 const logoWordMarkAbout = document.querySelector("#logo-word-mark-about");
 const logoMarkAbout = document.querySelector("#logo-mark-about");
 
-// Event listener for toggling theme on logo click 
+// Event listener for toggling theme on logo click
 if (logoWordMarkHome) {
     logoWordMarkHome.addEventListener("click", toggleTheme);
 }
