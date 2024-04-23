@@ -32,6 +32,70 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', applyTheme);
 
 
+// JavaScript to handle hover and focus events for image source switching and video popup display
+
+// Function to change image source
+function changeImageSource(element, newSrc) {
+    const originalSrc = element.src;
+    element.addEventListener('mouseover', () => {
+        element.src = newSrc;
+    });
+    element.addEventListener('mouseout', () => {
+        element.src = originalSrc;
+    });
+    element.addEventListener('focus', () => {
+        element.src = newSrc;
+    });
+    element.addEventListener('blur', () => {
+        element.src = originalSrc;
+    });
+}
+
+// Implement the change on each memory image
+changeImageSource(document.getElementById('memory-1'), 'medias/memory-1-1.JPG');
+changeImageSource(document.getElementById('memory-2'), 'medias/memory-2-1.JPG');
+changeImageSource(document.getElementById('memory-3'), 'medias/memory-3-1.JPG');
+changeImageSource(document.getElementById('memory-4'), 'medias/memory-4-2.JPG');
+changeImageSource(document.getElementById('memory-5'), 'medias/memory-5-2.JPG');
+changeImageSource(document.getElementById('memory-6'), 'medias/memory-6-1.JPG');
+
+// Function to create and display a video player overlay
+function setupVideoPopup(id, videoSrc) {
+    const imgElement = document.getElementById(id);
+    imgElement.addEventListener('click', () => {
+        const videoContainer = document.createElement('div');
+        videoContainer.style.cssText = `
+            position: fixed;
+            top: 10%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        `;
+        videoContainer.innerHTML = `
+            <div style="position: relative; width: 100%; height: 100%;">
+                <video src="${videoSrc}" width="100%" height="100%" controls autoplay style="border-radius: 10px;"></video>
+                <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 10px; right: 10px; font-size: 16px; color: white; background-color: #ff0000; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">&times;</button>
+            </div>
+        `;
+        document.body.appendChild(videoContainer);
+    });
+}
+
+// Implement video popups for each image
+setupVideoPopup('memory-1', 'medias/video-1.mp4');
+setupVideoPopup('memory-2', 'medias/video-1.mp4');
+setupVideoPopup('memory-3', 'medias/video-1.mp4');
+setupVideoPopup('memory-4', 'medias/video-1.mp4');
+setupVideoPopup('memory-5', 'medias/video-1.mp4');
+setupVideoPopup('memory-6', 'medias/video-1.mp4');
+
+
 // Select the logo elements
 const logoWordMarkHome = document.querySelector("#logo-word-mark-home");
 const logoMarkHome = document.querySelector("#logo-mark-home");
@@ -149,3 +213,5 @@ if (gotoMenuArrowLeft) {
 if (gotoMemoryArrowRight) {
     gotoMemoryArrowRight.addEventListener("click", () => window.location.href = "memory.html");
 }
+
+
