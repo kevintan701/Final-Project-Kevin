@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', applyTheme);
 
 // JavaScript to handle hover and focus events for image source switching and video popup display
 
+// JavaScript to handle hover and focus events for image source switching and video popup display
+
 // Function to change image source
 function changeImageSource(element, newSrc) {
     const originalSrc = element.src;
@@ -59,7 +61,7 @@ changeImageSource(document.getElementById('memory-4'), 'medias/memory-4-2.JPG');
 changeImageSource(document.getElementById('memory-5'), 'medias/memory-5-2.JPG');
 changeImageSource(document.getElementById('memory-6'), 'medias/memory-6-1.JPG');
 
-// Function to create and display a video player overlay
+// Function to create and display a video player overlay with accessible close button
 function setupVideoPopup(id, videoSrc) {
     const imgElement = document.getElementById(id);
     imgElement.addEventListener('click', () => {
@@ -80,10 +82,15 @@ function setupVideoPopup(id, videoSrc) {
         videoContainer.innerHTML = `
             <div style="position: relative; width: 100%; height: 100%;">
                 <video src="${videoSrc}" width="100%" height="100%" controls autoplay style="border-radius: 10px;"></video>
-                <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 10px; right: 10px; font-size: 16px; color: white; background-color: #ff0000; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">&times;</button>
+                <button aria-label="Close video" onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 10px; right: 10px; font-size: 16px; color: white; background-color: #ff0000; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer;" tabindex="0" onkeydown="if(event.key==='Enter'){this.click();}">&times;</button>
             </div>
         `;
         document.body.appendChild(videoContainer);
+        // Automatically focus the close button when the video is displayed
+        const closeButton = videoContainer.querySelector('button');
+        closeButton.focus();
+        closeButton.onfocus = () => closeButton.style.outline = '2px solid cyan';
+        closeButton.onblur = () => closeButton.style.outline = 'none';
     });
 }
 
