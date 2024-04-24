@@ -32,8 +32,39 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', applyTheme);
 
 
-// JavaScript to handle hover and focus events for image source switching and video popup display
+// Select the logo elements
+const logoWordMarkHome = document.querySelector("#logo-word-mark-home");
+const logoMarkHome = document.querySelector("#logo-mark-home");
+const logoWordMarkMenu = document.querySelector("#logo-word-mark-menu");
+const logoWordMarkMemory = document.querySelector("#logo-word-mark-memory");
+const logoWordMarkAbout = document.querySelector("#logo-word-mark-about");
+const logoMarkAbout = document.querySelector("#logo-mark-about");
 
+// Event listener for toggling theme on logo click
+if (logoWordMarkHome) {
+    logoWordMarkHome.addEventListener("click", toggleTheme);
+}
+
+
+if (logoWordMarkMenu) {
+    logoWordMarkMenu.addEventListener("click", toggleTheme);
+}
+
+if (logoWordMarkMemory) {
+    logoWordMarkMemory.addEventListener("click", toggleTheme);
+}
+
+if (logoWordMarkAbout) {
+    logoWordMarkAbout.addEventListener("click", toggleTheme);
+}
+
+if (logoMarkHome) {
+    logoMarkHome.addEventListener("click", toggleTheme);
+}
+
+if (logoMarkAbout) {
+    logoMarkAbout.addEventListener("click", toggleTheme);
+}
 // JavaScript to handle hover and focus events for image source switching and video popup display
 
 // Function to change image source
@@ -103,39 +134,7 @@ setupVideoPopup('memory-5', 'medias/video-1.mp4');
 setupVideoPopup('memory-6', 'medias/video-1.mp4');
 
 
-// Select the logo elements
-const logoWordMarkHome = document.querySelector("#logo-word-mark-home");
-const logoMarkHome = document.querySelector("#logo-mark-home");
-const logoWordMarkMenu = document.querySelector("#logo-word-mark-menu");
-const logoWordMarkMemory = document.querySelector("#logo-word-mark-memory");
-const logoWordMarkAbout = document.querySelector("#logo-word-mark-about");
-const logoMarkAbout = document.querySelector("#logo-mark-about");
 
-// Event listener for toggling theme on logo click
-if (logoWordMarkHome) {
-    logoWordMarkHome.addEventListener("click", toggleTheme);
-}
-
-
-if (logoWordMarkMenu) {
-    logoWordMarkMenu.addEventListener("click", toggleTheme);
-}
-
-if (logoWordMarkMemory) {
-    logoWordMarkMemory.addEventListener("click", toggleTheme);
-}
-
-if (logoWordMarkAbout) {
-    logoWordMarkAbout.addEventListener("click", toggleTheme);
-}
-
-if (logoMarkHome) {
-    logoMarkHome.addEventListener("click", toggleTheme);
-}
-
-if (logoMarkAbout) {
-    logoMarkAbout.addEventListener("click", toggleTheme);
-}
 
 // Select all logo elements for hover and focus effects
 const logoItems = document.querySelectorAll("#logo-word-mark-home, #logo-word-mark-menu, #logo-word-mark-memory, #logo-word-mark-about, #logo-mark-home, #logo-mark-about");
