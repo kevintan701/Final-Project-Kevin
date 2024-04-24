@@ -1,4 +1,47 @@
 // JavaScript for Kevin's Final Project - THE.LAB.701 website
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const mainContent = document.querySelector('#maincontent');
+
+    // Setup for the hamburger menu toggle
+    const hamburgerBtn = document.querySelector("#hamburger-btn");
+    if (hamburgerBtn && header && mainContent) {
+        hamburgerBtn.addEventListener("click", () => {
+            console.log("Hamburger clicked");
+            header.classList.toggle("show-mobile-menu");
+            mainContent.classList.toggle('content-blur');
+            console.log("Menu toggle class applied:", header.classList.contains("show-mobile-menu"));
+        });
+    }
+
+    // Setup for closing the mobile menu
+    const closeMenuBtn = document.querySelector("#close-menu-btn");
+    if (closeMenuBtn && hamburgerBtn) {
+        closeMenuBtn.addEventListener("click", () => {
+            hamburgerBtn.click();
+        });
+    }
+
+    // Navigation link setups
+    setupNavigation("#navigation-arrow-menu", "menu.html");
+    setupNavigation("#navigation-arrow-explore", "memory.html");
+    setupNavigation("#navigation-arrow-about", "about.html");
+    setupNavigation("#left-arrow-memories", "memory.html");
+    setupNavigation("#right-arrow-about", "about.html");
+    setupNavigation("#left-arrow-menu", "menu.html");
+    setupNavigation("#right-arrow-memories", "memory.html");
+});
+
+// Helper function to setup navigation redirection
+function setupNavigation(selector, url) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.addEventListener("click", () => {
+            window.location.href = url;
+        });
+    }
+}
+
 
 // Function to toggle the theme
 function applyTheme() {
@@ -137,87 +180,24 @@ setupVideoPopup('memory-6', 'medias/video-1.mp4');
 
 
 // Select all logo elements for hover and focus effects
-const logoItems = document.querySelectorAll("#logo-word-mark-home, #logo-word-mark-menu, #logo-word-mark-memory, #logo-word-mark-about, #logo-mark-home, #logo-mark-about");
-logoItems.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-        item.classList.add("item-hover");
-    });
-    item.addEventListener("mouseleave", () => {
-        item.classList.remove("item-hover");
-    });
-    item.addEventListener("focus", () => {
-        item.classList.add("item-hover");
-    });
-    item.addEventListener("blur", () => {
-        item.classList.remove("item-hover");
-    });
-});
+// const logoItems = document.querySelectorAll("#logo-word-mark-home, #logo-word-mark-menu, #logo-word-mark-memory, #logo-word-mark-about, #logo-mark-home, #logo-mark-about");
+// logoItems.forEach((item) => {
+//     item.addEventListener("mouseenter", () => {
+//         item.classList.add("item-hover");
+//     });
+//     item.addEventListener("mouseleave", () => {
+//         item.classList.remove("item-hover");
+//     });
+//     item.addEventListener("focus", () => {
+//         item.classList.add("item-hover");
+//     });
+//     item.addEventListener("blur", () => {
+//         item.classList.remove("item-hover");
+//     });
+// });
 
 
 
 
-const header = document.querySelector("header");
-const hamburgerBtn = document.querySelector("#hamburger-btn");
-const closeMenuBtn = document.querySelector("#close-menu-btn");
-const gotoMenuBtn = document.querySelector("#navigation-arrow-menu");
-const gotoExploreBtn = document.querySelector("#navigation-arrow-explore");
-const gotoAboutBtn = document.querySelector("#navigation-arrow-about");
-const gotoMemoryArrowLeft = document.querySelector("#left-arrow-memories");
-const gotoAboutArrowRight = document.querySelector("#right-arrow-about");
-const gotoMenuArrowLeft = document.querySelector("#left-arrow-menu");
-const gotoMemoryArrowRight = document.querySelector("#right-arrow-memories");
-
-
-// Toggle mobile menu and blur content on hamburger button click
-hamburgerBtn.addEventListener("click", () => {
-    header.classList.toggle("show-mobile-menu");
-    document.querySelector('#maincontent').classList.toggle('content-blur');
-    document.querySelector('#hamburger-btn').classList.toggle('content-blur');
-    document.querySelector('#logo-mark-about').classList.toggle('content-blur');
-});
-
-
-// Close mobile menu on close button click
-if (closeMenuBtn) {
-    closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
-}
-
-// Go to menu page on arrow click
-if (gotoMenuBtn) {
-    gotoMenuBtn.addEventListener("click", () => window.location.href = "menu.html");
-}
-
-
-// Go to explore page on arrow click
-if (gotoExploreBtn) {
-    gotoExploreBtn.addEventListener("click", () => window.location.href = "memory.html");
-}
-
-// Go to about page on arrow click
-if (gotoAboutBtn) {
-    gotoAboutBtn.addEventListener("click", () => window.location.href = "about.html");
-}
-
-// Go to memories page on arrow click
-if (gotoMemoryArrowLeft) {
-    gotoMemoryArrowLeft.addEventListener("click", () => window.location.href = "memory.html");
-}
-
-
-// Go to about page on arrow click
-if (gotoAboutArrowRight) {
-    gotoAboutArrowRight.addEventListener("click", () => window.location.href = "about.html");
-}
-
-// Go to menu page on arrow click
-if (gotoMenuArrowLeft) {
-    gotoMenuArrowLeft.addEventListener("click", () => window.location.href = "menu.html");
-}
-
-
-// Go to memories page on arrow click
-if (gotoMemoryArrowRight) {
-    gotoMemoryArrowRight.addEventListener("click", () => window.location.href = "memory.html");
-}
 
 
