@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
     const mainContent = document.querySelector('#maincontent');
+    const logoAbout = document.querySelector("#logo-mark-about");
 
     // Setup for the hamburger menu toggle
     const hamburgerBtn = document.querySelector("#hamburger-btn");
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Hamburger clicked");
             header.classList.toggle("show-mobile-menu");
             mainContent.classList.toggle('content-blur');
+            logoAbout.classList.toggle('content-blur');
             console.log("Menu toggle class applied:", header.classList.contains("show-mobile-menu"));
         });
     }
