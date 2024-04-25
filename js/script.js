@@ -1,3 +1,5 @@
+// JavaScript for Kevin's Final Project - THE.LAB.701 website
+
 let cart = {};
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -120,42 +122,44 @@ function checkoutCart() {
 }
 
 
-
-// JavaScript for Kevin's Final Project - THE.LAB.701 website
+//hamburger menu function
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
-    const mainContent = document.querySelector('#maincontent');
-    const logoAbout = document.querySelector("#logo-mark-about");
+    const mainContent = document.querySelector('main');
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    const logoAbout = document.getElementById('logo-mark-about'); // This might not exist on all pages
 
-    // Setup for the hamburger menu toggle
-    const hamburgerBtn = document.querySelector("#hamburger-btn");
-    if (hamburgerBtn && header && mainContent) {
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    if (hamburgerBtn && header && mainContent && cartIcon && cartCount) {
         hamburgerBtn.addEventListener("click", () => {
-            console.log("Hamburger clicked");
             header.classList.toggle("show-mobile-menu");
             mainContent.classList.toggle('content-blur');
-            logoAbout.classList.toggle('content-blur');
-            console.log("Menu toggle class applied:", header.classList.contains("show-mobile-menu"));
+            cartIcon.classList.toggle('content-blur');
+            cartCount.classList.toggle('content-blur');
+            if (logoAbout) logoAbout.classList.toggle('content-blur'); // Only toggle if exists
+            console.log("Hamburger menu toggled. Menu visible:", header.classList.contains("show-mobile-menu"));
         });
     }
 
-    // Setup for closing the mobile menu
-    const closeMenuBtn = document.querySelector("#close-menu-btn");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
     if (closeMenuBtn && hamburgerBtn) {
         closeMenuBtn.addEventListener("click", () => {
-            hamburgerBtn.click();
+            hamburgerBtn.click(); // Reuse the toggle functionality
         });
     }
-
-    // Navigation link setups
-    setupNavigation("#navigation-arrow-menu", "menu.html");
-    setupNavigation("#navigation-arrow-explore", "memory.html");
-    setupNavigation("#navigation-arrow-about", "about.html");
-    setupNavigation("#left-arrow-memories", "memory.html");
-    setupNavigation("#right-arrow-about", "about.html");
-    setupNavigation("#left-arrow-menu", "menu.html");
-    setupNavigation("#right-arrow-memories", "memory.html");
 });
+
+
+
+// Navigation link setups
+setupNavigation("#navigation-arrow-menu", "menu.html");
+setupNavigation("#navigation-arrow-explore", "memory.html");
+setupNavigation("#navigation-arrow-about", "about.html");
+setupNavigation("#left-arrow-memories", "memory.html");
+setupNavigation("#right-arrow-about", "about.html");
+setupNavigation("#left-arrow-menu", "menu.html");
+setupNavigation("#right-arrow-memories", "memory.html");
 
 // Helper function to setup navigation redirection
 function setupNavigation(selector, url) {
