@@ -1,3 +1,126 @@
+let cart = {};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    cartIcon.addEventListener('click', toggleCartDropdown);
+    cartCount.addEventListener('click', toggleCartDropdown);
+
+    loadCart();
+    updateCartCount();
+    updateCartDropdown();
+});
+
+function addToCart(product, price) {
+    if (cart[product]) {
+        cart[product].qty += 1;
+    } else {
+        cart[product] = { price: price, qty: 1 };
+    }
+    saveCart();
+    updateCartCount();
+    updateCartDropdown();
+}
+
+function saveCart() {
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+
+function loadCart() {
+    cart = JSON.parse(localStorage.getItem("shoppingCart")) || {};
+    updateCartDropdown();
+}
+
+function updateCartCount() {
+    const count = Object.values(cart).reduce((acc, { qty }) => acc + qty, 0);
+    document.getElementById('cart-count').textContent = count;
+}
+
+function toggleCartDropdown() {
+    const cartDropdown = document.getElementById('cart-dropdown');
+    const mainContent = document.querySelector('main');
+    const footerContent = document.querySelector('footer');
+    if (cartDropdown.style.display === 'block') {
+        cartDropdown.style.display = 'none';
+        mainContent.style.filter = ''; // Remove blur effect
+        footerContent.style.filter = '';
+    } else {
+        cartDropdown.style.display = 'block';
+        mainContent.style.filter = 'blur(4px)'; // Apply blur effect
+        footerContent.style.filter = 'blur(4px)';
+    }
+}
+
+function updateCartDropdown() {
+    const cartItemsList = document.getElementById('cart-items-list');
+    cartItemsList.innerHTML = ''; // Clear current list
+
+    let total = 0;
+    let taotalCups = 0;
+    Object.entries(cart).forEach(([product, { qty, price }]) => {
+        total += qty * price;
+        taotalCups += qty;
+        const itemElement = document.createElement('li');
+        itemElement.textContent = `${product} - $${price} x ${qty}`;
+
+        const addButton = document.createElement('button');
+        addButton.className = "material-symbols-outlined";
+        addButton.textContent = "add_circle";
+        addButton.onclick = () => addToCart(product, price);
+
+        const removeButton = document.createElement('button');
+        removeButton.className = "material-symbols-outlined";
+        removeButton.textContent = "do_not_disturb_on";
+        removeButton.onclick = () => removeFromCart(product);
+
+        itemElement.appendChild(addButton);
+        itemElement.appendChild(removeButton);
+        cartItemsList.appendChild(itemElement);
+    });
+    const cupElement = document.createElement('li');
+    cupElement.textContent = `Total Cup: ${taotalCups}`;
+    cupElement.style.justifyContent = 'center';
+
+    const totalElement = document.createElement('li');
+    totalElement.textContent = `Total: $${total}`;
+    totalElement.style.justifyContent = 'center';
+
+    cartItemsList.appendChild(cupElement);
+    cartItemsList.appendChild(totalElement);
+
+}
+
+function removeFromCart(product) {
+    if (cart[product]) {
+        if (cart[product].qty > 1) {
+            cart[product].qty--;
+        } else {
+            delete cart[product];
+        }
+        saveCart();
+        updateCartCount();
+        updateCartDropdown();
+    }
+}
+
+function closeCart() {
+    const cartDropdown = document.getElementById('cart-dropdown');
+    const mainContent = document.querySelector('main');
+    const footerContent = document.querySelector('footer');
+
+    cartDropdown.style.display = 'none';
+    mainContent.style.filter = ''; // Remove blur effect
+    footerContent.style.filter = '';
+
+}
+
+function checkoutCart() {
+    console.log('Proceeding to checkout...');
+    // Implement checkout functionality or redirection to checkout page here
+}
+
+
+
 // JavaScript for Kevin's Final Project - THE.LAB.701 website
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
@@ -197,6 +320,7 @@ setupVideoPopup('memory-6', 'medias/video-1.mp4');
 //         item.classList.remove("item-hover");
 //     });
 // });
+
 
 
 

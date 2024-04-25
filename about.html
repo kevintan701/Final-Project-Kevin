@@ -27,9 +27,16 @@
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="memory.html">Memory</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><span id="cart-icon" class="material-symbols-outlined" tabindex="0">shopping_cart</span></li>
+                <li><span id="cart-count">0</span></li>
             </ul>
             <span id="hamburger-btn" class="material-symbols-outlined" tabindex="0">menu</span>
 
+            <div id="cart-dropdown" class="cart-dropdown">
+                <button id="cart-close" class="material-symbols-outlined" onclick="closeCart()">close</button>
+                <ul id="cart-items-list"></ul>
+                <button onclick="checkoutCart()">Checkout</button>
+            </div>
         </nav>
         <img src="medias/Logo_Word_Mark.png" alt="THE.LAB.701 Logo - Word Mark" id="logo-word-mark-about" tabindex="0">
         <img src="medias/Lab_Logo.svg" alt="THE.LAB.701 Logo - Mark" id="logo-mark-about" tabindex="0">

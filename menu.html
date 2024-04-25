@@ -31,8 +31,17 @@
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="memory.html">Memory</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><span id="cart-icon" class="material-symbols-outlined" tabindex="0">shopping_cart</span></li>
+                <li><span id="cart-count">0</span></li>
             </ul>
             <span id="hamburger-btn" class="material-symbols-outlined" tabindex="0">menu</span>
+
+            <div id="cart-dropdown" class="cart-dropdown">
+                <button id="cart-close" class="material-symbols-outlined" onclick="closeCart()">close</button>
+                <ul id="cart-items-list"></ul>
+                <button onclick="checkoutCart()">Checkout</button>
+            </div>
+    
 
         </nav>
         <img src="medias/Logo_Word_Mark.png" alt="THE.LAB.701 Logo - Word Mark" id="logo-word-mark-menu" tabindex="0">
@@ -44,14 +53,17 @@
             <h1>OUR MENU</h1>
 
             <section class="menu" id="menu-coffee">
-                <h2>Americano 701</h2>
-                <h2>$4</h2>
-                <h2>Cold Brew 701</h2>
-                <h2>$5</h2>
-                <h2>Flat White 701</h2>
-                <h2>$6</h2>
-
+                    <h2>Americano 701</h2>
+                    <p>$4</p>
+                    <button id="cart-coffee" class="material-symbols-outlined" onclick="addToCart('Americano 701', 4)">shopping_cart</button>
+                    <h2>Cold Brew 701</h2>
+                    <p>$5</p>
+                    <button id="cart-coffee" class="material-symbols-outlined" onclick="addToCart('Cold Brew 701', 5)">shopping_cart</button>
+                    <h2>Flat White 701</h2>
+                    <p>$6</p>
+                    <button id="cart-coffee" class="material-symbols-outlined" onclick="addToCart('Flat White 701', 6)">shopping_cart</button>
             </section>
+            
 
 
             <section class="sub-navi-others">
